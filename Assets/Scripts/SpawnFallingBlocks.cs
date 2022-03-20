@@ -7,9 +7,11 @@ public class SpawnFallingBlocks : MonoBehaviour
     [SerializeField] private GameObject fallingBlockPrefab;
     [SerializeField] private float respawnTime = 0.1f;
     private Vector2 screenBounds;
+    void Awake() {
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+    }
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         StartCoroutine(blockWave());
     }
     private void spawn() {
