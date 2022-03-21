@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
     
     void Awake() {
         rb = this.GetComponent<Rigidbody2D>();
-        inventory = new Inventory(); 
-        ui_inventory.SetInventory(inventory);
     }
     void Start()
     {
+        inventory = new Inventory(); 
+        ui_inventory.SetInventory(inventory);
     }
 
     // Update is called once per frame
